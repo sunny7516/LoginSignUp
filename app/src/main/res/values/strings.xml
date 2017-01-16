@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Login_SignUp_Module</string>
+    <!-- 카카오 로그인 및 모든 카카오 서비스 시 필요 -->
+    <string name="kakao_app_key">847e26ac7e9d8bc60969789afa719812</string>
+</resources>
