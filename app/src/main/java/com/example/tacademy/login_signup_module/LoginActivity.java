@@ -2,6 +2,7 @@ package com.example.tacademy.login_signup_module;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.kakao.usermgmt.LoginButton;
 
@@ -17,7 +18,7 @@ public class LoginActivity extends kakaoLoginActivity {
     }
 
     //회원가입
-    public void onSignUp() {
+    public void onSignUp(View view) {
         Intent intent = new Intent(this, SignUpActivity.class);
         startActivity(intent);
     }

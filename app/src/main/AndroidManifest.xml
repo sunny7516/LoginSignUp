@@ -2,7 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tacademy.login_signup_module">
 
+    <!-- [START gcm_permission] -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <!-- 디바이스가 잠금이 되어 화면이 꺼져있을 경우에도 GCM을 받을 수 있기 위해서 디바이스를 깨우는 권한 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- [END gcm_permission] -->
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 전화번호 획득 가능 (전화번호부x) 핸드폰 정보 읽어옴 - 인증 등에서 필요 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:name=".GlobalApplication"
@@ -25,6 +33,18 @@
             android:value="@string/kakao_app_key" />
 
         <activity android:name=".SignUpActivity"></activity>
+        <!-- FCM 메시지 수신 서비스-->
+        <service android:name="com.example.tacademy.login_signup_module.fcm.MyfirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <!-- FCM 고유 아이디 수신 서비스 -->
+        <service android:name="com.example.tacademy.login_signup_module.fcm.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

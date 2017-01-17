@@ -9,6 +9,8 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 
+import com.google.firebase.iid.FirebaseInstanceId;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -18,6 +20,9 @@ public class MainActivity extends kakaoLoginActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        Log.i("토큰|:","" + refreshedToken);
 
         //해시키 구하기
         try {
