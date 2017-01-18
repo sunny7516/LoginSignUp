@@ -32,19 +32,21 @@
             android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />
 
-        <activity android:name=".SignUpActivity"></activity>
-        <!-- FCM 메시지 수신 서비스-->
-        <service android:name="com.example.tacademy.login_signup_module.fcm.MyfirebaseMessagingService">
+        <activity android:name=".SignUpActivity" />
+        <!-- FCM 메시지 수신 서비스 -->
+        <service android:name=".fcm.MyfirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
         <!-- FCM 고유 아이디 수신 서비스 -->
-        <service android:name="com.example.tacademy.login_signup_module.fcm.MyFirebaseInstanceIDService">
+        <service android:name=".fcm.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
+
+        <activity android:name=".ServiceActivity"></activity>
     </application>
 
 </manifest>

@@ -41,6 +41,28 @@ public class Member {
         this.profile = profile;
     }
 
+    @Override
+    public String toString() {
+        return "{" +
+                "  \"idx\":" + idx +
+                ", \"nickname\":\"" + nickname + '\"' +
+                ", \"kakaoID\":\"" + kakaoID + '\"' +
+                ", \"facebookID\":\"" + facebookID + '\"' +
+                ", \"password\":\"" + password + '\"' +
+                ", \"email\":\"" + email + '\"' +
+                ", \"phone\":\"" + phone + '\"' +
+                ", \"token\":\"" + token + '\"' +
+                ", \"uuid\":\"" + uuid + '\"' +
+                ", \"os_version\":\"" + os_version + '\"' +
+                ", \"device\":\"" + device + '\"' +
+                ", \"regdate\":\"" + regdate + '\"' +
+                ", \"lastdate\":\"" + lastdate + '\"' +
+                ", \"point\":" + point +
+                ", \"level\":" + level +
+                ", \"profile\":\"" + profile + '\"' +
+                "}";
+    }
+
     public int getIdx() {
         return idx;
     }
@@ -166,6 +188,5 @@ public class Member {
     }
 
     public void setProfile(String profile) {
-        this.profile = profile;
-    }
+        this.profile = profile;}
 }

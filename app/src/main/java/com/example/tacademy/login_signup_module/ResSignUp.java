@@ -1,10 +1,10 @@
 package com.example.tacademy.login_signup_module;
 
 /**
- * Created by Tacademy on 2017-01-17.
+ * Created by Tacademy on 2017-01-18.
  */
 
-public class ResHeader {
+public class ResSignUp {
     int code;
     String msg;
 
