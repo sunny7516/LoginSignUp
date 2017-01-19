@@ -1,7 +1,6 @@
 package com.example.tacademy.login_signup_module;
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
@@ -35,6 +34,7 @@ public class SignUpActivity extends kakaoLoginActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        U.getInstance().addActivity(this);
 
         // 안드로이드 6.0 (혹은 5.0) 이상부터는 개인정보보호 정책이 강화되어서
         // 민감한 API들에 대한 퍼미션을 무조건 앱 사용 시 다시 띄워서
@@ -222,8 +222,10 @@ public class SignUpActivity extends kakaoLoginActivity {
             return;
         }
         // 3. 성공 처리 -> 로그인 진행
-        onLogin();
+        U.getInstance().onLogin(this, kakaoID, facebookID, email, password);
     }
+
+    /*
     //로그인
     public void onLogin() {
         // 1. 파라미터 세팅 -> Json 형식으로
@@ -297,4 +299,5 @@ public class SignUpActivity extends kakaoLoginActivity {
         //{"idx":2, "nickname":"저머니", "kakaoID":"8723487", "facebookID":"null"...}
 
     }
+    */
 }

@@ -7,6 +7,8 @@ import android.util.Log;
 
 import com.kakao.auth.ISessionCallback;
 import com.kakao.auth.Session;
+import com.kakao.usermgmt.UserManagement;
+import com.kakao.usermgmt.callback.LogoutResponseCallback;
 import com.kakao.util.exception.KakaoException;
 import com.kakao.util.helper.log.Logger;
 
@@ -63,5 +65,16 @@ public class kakaoLoginActivity extends AppCompatActivity {
     // 간단하게 로그인 하는 액티비티로 이동
     protected void redirectSignupActivity() {
         //사용자가 입맛에 맞게 고쳐라 = 재정의 = override
+    }
+    // 세션이 열렸을대만 활성화 하고 -> 마이 메뉴쪽 하단에 배치
+    public void onLogout()
+    {
+        UserManagement.requestLogout(new LogoutResponseCallback() {
+            @Override
+            public void onCompleteLogout() {
+                //redirectLoginActivity();
+                // 저장된 로그인 정보도 모두 삭제
+            }
+        });
     }
 }
